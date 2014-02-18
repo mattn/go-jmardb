@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	datas, err := jmardb.NewClient().Area(35.6199114, 139.7512247)
+	datas, err := jmardb.NewClient().Area(35.6199114, 139.7512247, -1)
 	if err != nil {
 		log.Fatal(err)
 	}
