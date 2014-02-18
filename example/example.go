@@ -7,14 +7,16 @@ import (
 )
 
 func main() {
-	datas, err := jmardb.NewClient().Area(35.6199114, 139.7512247, -1)
+	client := jmardb.NewClient()
+
+	areas, err := client.Area(35.6199114, 139.7512247, -1)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	for _, data := range datas {
-		fmt.Println(data.JISX0402 + ": " + data.Code + ", " + data.Name)
-		for _, forecast := range data.Forecast {
+	for _, area := range areas {
+		fmt.Println(area.JISX0402 + ": " + area.Code + ", " + area.Name)
+		for _, forecast := range area.Forecast {
 			fmt.Println("\t" + forecast.Code + ": " + forecast.Name)
 		}
 	}
