@@ -3,6 +3,8 @@ go-jmardb
 
 Interface to 気象庁防災情報 検索 API
 
+See http://api.aitc.jp/jmardb/help
+
 Usage:
 ------
 
